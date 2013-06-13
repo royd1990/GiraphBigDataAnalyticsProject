@@ -1237,5 +1237,11 @@ under the License.
     <module>giraph-core</module>
     <module>giraph-examples</module>
   </modules>
+  <parent>
+	<groupId>org.data2semantics.giraph</groupId>
+	<artifactId>MultiProject</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+  </parent>
 
 </project>
