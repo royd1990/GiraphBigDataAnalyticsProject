@@ -20,7 +20,7 @@ function addNodeToDict {
 	echo "$1	$nodeIterator" >> $dictFile;
 	nodeId=$nodeIterator
 	nodeIterator=$(($nodeIterator + 1))
-}  
+}
 
 
 
@@ -35,14 +35,20 @@ fi
 
 
 inputFile="$1"
-outputFile="${inputFile}_giraph"
+outputFile=`basename $inputFile`
+outputFile+="_giraph"
 if [ -n "$2" ];then
 	outputFile="$2"
 fi
-dictFile="${inputFile}_dict"
+dictFile=`basename $inputFile`
+dictFile+="_dict"
 if [ -n "$3" ];then
 	dictFile="$3"
 fi
+
+sortedFile=`basename $inputFile`
+sortedFile+="_sorted"
+
 #init empty files (overwrites as well!)
 > "$dictFile"
 > "$outputFile"
@@ -55,7 +61,7 @@ prevNode1Id=""
 lineNum=0;
 nodeIterator=0; #used for assigning IDs to nodes
 outgoingEdges=()
-sort $inputFile > "${inputFile}_sorted"
+sort $inputFile > "$sortedFile"
 while read line; do
 	lineNum=$(($lineNum + 1))
 	node1=`echo "$line" | awk '{print $1}'`;
@@ -103,7 +109,7 @@ while read line; do
 		fi
 		outgoingEdges+=("$nodeId")
 	fi
-done < sorted
+done < "$sortedFile"
 if [ -n "$prevNode1String" ]; then
 	#store last iteration
 	edgesString="["
