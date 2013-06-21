@@ -12,13 +12,13 @@ public class BCNode implements Writable {
 	private double distance;
 	private int betweennessCentrality;
 	
-	BCNode(){
-		parent = 0;
+	public BCNode(){
+		parent = -1;
 		distance = Integer.MAX_VALUE;
 		betweennessCentrality = 0;
 	}
 	
-	BCNode(long p, double d, int bc){
+	public BCNode(long p, double d, int bc){
 		parent = p;
 		distance = d;
 		betweennessCentrality = bc;

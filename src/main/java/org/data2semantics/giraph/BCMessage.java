@@ -11,7 +11,9 @@ public class BCMessage implements Writable {
 	private long pred;
 	private double value;
 	
-	BCMessage(long pred, double value){
+	public BCMessage(){}
+	
+	public BCMessage(long pred, double value){
 		this.pred=pred;
 		this.value=value;
 	}
