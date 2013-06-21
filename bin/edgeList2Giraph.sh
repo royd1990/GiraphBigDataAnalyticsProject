@@ -65,7 +65,7 @@ sort $inputFile > "$sortedFile"
 while read line; do
 	lineNum=$(($lineNum + 1))
 	node1=`echo "$line" | awk '{print $1}'`;
-	node2=`echo "$line" | awk '{print $2}'`;
+	node2=`echo "$line" | awk '{print $3}'`;
 	if [ -z "$node1" ] || [ -z "$node2" ] ; then
 		echo "WARN: unable to parse '$line' on line $lineNum. Skipping" 
 		continue
