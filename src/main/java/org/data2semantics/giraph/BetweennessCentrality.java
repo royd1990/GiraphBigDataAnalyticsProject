@@ -26,6 +26,7 @@ import org.apache.giraph.graph.Vertex;
 import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.log4j.Logger;
+import org.mortbay.log.Log;
 
 import java.io.IOException;
 
@@ -71,10 +72,12 @@ public class BetweennessCentrality extends BasicComputation<LongWritable, BCNode
 			}
 		}
 
-//		if (LOG.isDebugEnabled()) {
+		if (LOG.isDebugEnabled()) {
 			LOG.debug("Vertex " + vertex.getId() + " got minDist = " + minDist + " vertex value = "
 					+ vertex.getValue().getDistance());
-//		}
+			
+		}
+		Log.warn("laurens debug message");
 
 		if (minDist < vertex.getValue().getDistance()) {
 			BCNode vertexValue = vertex.getValue().clone();
