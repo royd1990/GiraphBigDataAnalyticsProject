@@ -10,9 +10,10 @@ To compile:
 
 Running the analysis requires a compiled trunk version of Giraph:  
 ```
-	git clone git@github.com:apache/giraph.git  
-	cd giraph  
-	mvn install```
+git clone git@github.com:apache/giraph.git  
+cd giraph  
+mvn install
+```
 
 ##Analysis
 ###pagerank
@@ -25,7 +26,8 @@ org.apache.giraph.GiraphRunner  org.data2semantics.giraph.pagerank.PageRankCompu
 -wc org.data2semantics.giraph.pagerank.RandomWalkWorkerContext
 -op <outputPath> \  
 -eip <input edge list> \  
--w <number of workers>```
+-w <number of workers>
+```
 
 This executed pagerank for inputfile ```<input edge list>```, writes output to directory ```<outputPath>```, and uses this amount of workers: ```<number of workers>```
 
@@ -37,7 +39,8 @@ org.apache.giraph.GiraphRunner  org.data2semantics.giraph.pagerank.SimpleOutDegr
 -of org.apache.giraph.io.formats.IdWithValueTextOutputFormat \  
 -op <outputPath> \  
 -eip <input edge list> \  
--w <number of workers>```
+-w <number of workers>
+```
 
 This executed pagerank for inputfile ```<input edge list>```, writes output to directory ```<outputPath>```, and uses this amount of workers: ```<number of workers>```
 
@@ -49,6 +52,7 @@ org.apache.giraph.GiraphRunner  org.data2semantics.giraph.pagerank.SimpleInDegre
 -of org.apache.giraph.io.formats.IdWithValueTextOutputFormat \  
 -op <outputPath> \  
 -eip <input edge list> \  
--w <number of workers>```
+-w <number of workers>
+```
 
 This executed pagerank for inputfile ```<input edge list>```, writes output to directory ```<outputPath>```, and uses this amount of workers: ```<number of workers>```
