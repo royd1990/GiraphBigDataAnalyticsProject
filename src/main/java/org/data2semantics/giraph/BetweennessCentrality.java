@@ -37,7 +37,7 @@ import java.io.IOException;
 @Algorithm(name = "Shortest paths", description = "Finds all shortest paths from a selected vertex")
 public class BetweennessCentrality extends BasicComputation<LongWritable, BCNode, FloatWritable, BCMessage> {
 	/** The shortest paths id */
-	public static final LongConfOption SOURCE_ID = new LongConfOption("SimpleShortestPathsVertex.sourceId", 1);
+	public static final LongConfOption SOURCE_ID = new LongConfOption("SimpleShortestPathsVertex.sourceId", 1, "The shortest paths id");
 	/** Class logger */
 	private static final Logger LOG = Logger.getLogger(BetweennessCentrality.class);
 
