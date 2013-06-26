@@ -21,7 +21,6 @@ package org.data2semantics.giraph;
 import org.apache.giraph.conf.GiraphConfiguration;
 import org.apache.giraph.edge.ByteArrayEdges;
 import org.apache.giraph.utils.InternalVertexRunner;
-import org.data2semantics.giraph.io.EdgeListReader2;
 import org.data2semantics.giraph.pagerank.PageRankComputation;
 import org.junit.Test;
 
