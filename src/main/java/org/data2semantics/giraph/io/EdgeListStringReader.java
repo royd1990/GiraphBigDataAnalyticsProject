@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import java.io.IOException;
 
-public class EdgeListReader extends TextEdgeInputFormat<Text, NullWritable> {
+public class EdgeListStringReader extends TextEdgeInputFormat<Text, NullWritable> {
 
 	@Override
 	public EdgeReader<Text, NullWritable> createEdgeReader(InputSplit split, TaskAttemptContext context) throws IOException {
