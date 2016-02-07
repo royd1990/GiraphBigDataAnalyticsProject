@@ -35,6 +35,7 @@ public class PageRankComputation extends RandomWalkComputation<NullWritable> {
 			double stateProbability, Edge<Text, NullWritable> edge) {
 		return stateProbability / vertex.getNumEdges();
 	}
+	
 
 	@Override
 	protected double recompute(Vertex<Text, DoubleWritable, NullWritable> vertex,

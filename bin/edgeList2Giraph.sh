@@ -37,6 +37,8 @@ fi
 inputFile="$1"
 outputFile=`basename $inputFile`
 outputFile+="_giraph"
+idEdgeListFile=`basename $inputFile`
+idEdgeListFile+="_idEdgeList"
 if [ -n "$2" ];then
 	outputFile="$2"
 fi
@@ -77,6 +79,7 @@ while read line; do
 		if [ -z "$nodeId" ] ; then
 			addNodeToDict "$node2"
 		fi
+		echo -e "$prevNode1Id\t$nodeId" >> $idEdgeListFile
 		outgoingEdges+=("$nodeId")
 	else 
 		if [ -n "$prevNode1String" ]; then
@@ -100,7 +103,6 @@ while read line; do
 			addNodeToDict "$prevNode1String"
 		fi
 		prevNode1Id="$nodeId"
-		
 		outgoingEdges=()
 		nodeString="$node2"
 		findNodeId;
@@ -108,6 +110,7 @@ while read line; do
 			addNodeToDict "$node2"
 		fi
 		outgoingEdges+=("$nodeId")
+		echo -e "$prevNode1Id\t$nodeId" >> $idEdgeListFile;
 	fi
 done < "$sortedFile"
 if [ -n "$prevNode1String" ]; then
