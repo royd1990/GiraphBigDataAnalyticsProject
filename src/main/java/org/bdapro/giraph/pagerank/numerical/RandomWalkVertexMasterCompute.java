@@ -29,6 +29,7 @@ import org.apache.log4j.Logger;
  * Master compute associated with {@link RandomWalkComputation}. It handles
  * dangling nodes.
  */
+@SuppressWarnings("ALL")
 public class RandomWalkVertexMasterCompute extends DefaultMasterCompute {
 
   /** threshold for the L1 norm of the state vector difference  */
